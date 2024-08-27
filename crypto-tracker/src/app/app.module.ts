@@ -11,6 +11,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { CoinListComponent } from './components/coin-list/coin-list.component';
 import { CoinDetailComponent } from './components/coin-detail/coin-detail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, CoinListComponent, CoinDetailComponent],
@@ -20,7 +21,9 @@ import { CoinDetailComponent } from './components/coin-detail/coin-detail.compon
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
-    MatSelectModule,FormsModule
+    MatSelectModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [provideAnimations()],
   bootstrap: [AppComponent],

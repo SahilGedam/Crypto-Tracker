@@ -1,16 +1,42 @@
 <div class="banner">
-<div class="container">
+  <div class="container">
     <div class="header">
-        <h2 class="head">Crypto Tracker</h2>
-        <p class="para">Check all crypto details</p>
+      <h2 class="head">Crypto Tracker</h2>
+      <p class="para">Check all crypto details</p>
     </div>
     <div class="sub-header">
-        <!-- <marque behavior="scroll" onmouseover="stop()" onmouseout="start()" loop="infinite" direction="left">
-            <div class="row"></div>
-        </marque> -->
+      <marquee
+        behavior="scroll"
+        onmouseover="stop()"
+        onmouseout="start()"
+        loop="infinite"
+        direction="left"
+      >
+        <div class="row">
+          <ng-container *ngFor="let row of bannerData">
+            <div class="col-1">
+              <div class="card">
+                <img [src]="row.image" width="100" class="img-fluid" />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    {{ row.symbol | uppercase }}
+                    <!-- <span
+                      class="text-danger"
+                      {{row.market_cap_change_percentage_24h}}
+                    ></span> -->
+                  </h5>
+                  <p class="card-text">
+                    {{ row.current_price | currency : "INR" }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </marquee>
     </div>
+  </div>
 </div>
-</div>
-<div class="container "> 
-    <!-- table -->
+<div class="container">
+  <!-- table -->
 </div>
