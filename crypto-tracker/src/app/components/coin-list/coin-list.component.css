@@ -1,0 +1,33 @@
+.header {
+  height: 40%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+.head {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 3.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.0083em;
+}
+.para {
+  color: darkgray;
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.57;
+  letter-spacing: 0.00714em;
+}
+.banner {
+  height: 400px;
+  width: 100%;
+  background-image: url("https://as1.ftcdn.net/v2/jpg/02/27/75/72/1000_F_227757294_YpoZfxgM67GeOafnMlZ9oGtkxLCkLmXj.jpg");
+}
+.sub-header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}

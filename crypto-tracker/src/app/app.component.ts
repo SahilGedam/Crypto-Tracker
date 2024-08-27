@@ -3,8 +3,13 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'crypto-tracker';
+  selectedCountry = 'INR';
+  constructor(){}
+  sendCurrency($event: any){
+    console.log(event);
+    
+  }
 }
