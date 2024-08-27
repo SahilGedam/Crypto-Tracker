@@ -13,7 +13,7 @@ import { CoinListComponent } from './components/coin-list/coin-list.component';
 import { CoinDetailComponent } from './components/coin-detail/coin-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';import {MatSortModule} from '@angular/material/sort';
 @NgModule({
   declarations: [AppComponent, CoinListComponent, CoinDetailComponent],
   imports: [
@@ -25,7 +25,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatSelectModule,
     FormsModule,
     HttpClientModule,
-    MatTableModule,
+    MatTableModule,MatSortModule,
     MatPaginatorModule,
   ],
   providers: [provideAnimations()],
