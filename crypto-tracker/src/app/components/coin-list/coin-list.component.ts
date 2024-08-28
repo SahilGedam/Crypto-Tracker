@@ -15,7 +15,7 @@ import { CurrencyService } from '../../service/currency.service';
 export class CoinListComponent implements OnInit {
   bannerData: any = [];
   dataSource: any = [];
-
+  currency: string = 'INR';
   displayedColumns: string[] = [
     'current_price',
     'symbol',
@@ -31,22 +31,37 @@ export class CoinListComponent implements OnInit {
     private currencyService: CurrencyService
   ) {}
   ngOnInit(): void {
-    this.getAllData();
-    this.getBannerData();
+    // this.getAllData();
+    // this.getBannerData();
+    this.currencyService.getCurrency().subscribe((val) => {
+      this.currency = val;
+      this.getAllData();
+      this.getBannerData();
+    });
   }
   getBannerData() {
-    this.api.getTrendingCurrency('INR').subscribe((res) => {
-      // console.log(res);
-      this.bannerData = res;
-    });
+    this.api.getTrendingCurrency('INR').subscribe(
+      (res) => {
+        // console.log(res);
+        this.bannerData = res;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
   getAllData() {
-    this.api.getCurrency('INR').subscribe((res) => {
-      this.dataSource = new MatTableDataSource<any>(res);
-      console.log(this.dataSource);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-    });
+    this.api.getCurrency('INR').subscribe(
+      (res) => {
+        this.dataSource = new MatTableDataSource<any>(res);
+        console.log(this.dataSource);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
